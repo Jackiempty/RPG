@@ -8,7 +8,7 @@
 // #include <windows.h>
 #include <unistd.h>
 // #include <conio.h>
-#include <curses.h>
+#include <stdio.h>
 #include "KnightPlayer.h"
 #include "HealerPlayer.h"
 #include "GoblinMonster.h"

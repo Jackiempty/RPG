@@ -11,7 +11,7 @@
 // #include <windows.h>
 #include <unistd.h>
 // #include <conio.h>
-#include <curses.h>
+#include <stdio.h>
 //#include "Item.h"
 //#include "WeaponItem.h"
 //#include "ArmorItem.h"

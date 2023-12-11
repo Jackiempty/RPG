@@ -29,7 +29,7 @@ public:
 			cout << "3:  " << "Save" << endl;
 			cout << "4:  " << "Read" << endl;
 			cout << "e:  " << "Quit" << endl;
-			point = getch();
+			point = getchar();
 			switch(point)
 			{
 			case('1'):

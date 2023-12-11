@@ -39,7 +39,8 @@ void Game::Run()
 	//	cout << CurrentMap << endl;
 	//	CurrentMap->PrintMap();
 	//	system("pause");
-	initscr();
+	// initscr();
+	system("stty -icanon");
 	main = true;
     quit = false;
 	while (true)
@@ -56,7 +57,7 @@ void Game::Run()
 		system("clear");
 		CurrentMap->display();
 		char move;
-		move = getch();
+		move = getchar();
 		switch (move)
 		{
 		case('e'):
@@ -67,7 +68,7 @@ void Game::Run()
 		Trigger(); // 這裡也是，不再是以玩家為主體[✔]
 		
 	}
-	endwin();
+	// endwin();
 	system("clear");
 	cout << "GAME OVER" << endl;
 	return;
@@ -247,7 +248,7 @@ void Game::viewbackpack()
 		tmp_plyr = PlayerList[index];
 		tmp_plyr->Viewbackpack();
 		char move;
-		move = getch();
+		move = getchar();
 		if (move == '2')
 		{
 			break;
@@ -402,20 +403,20 @@ void Game::Shop()
 		cout << "6: (A)Professor's favorite $30" << endl;
 		char index;
 		cout << "What item do you want to buy? (input 0 to quit)" << endl;
-		index = getch();
+		index = getchar();
 		while (true)
 		{
 			if (cin.fail())
 			{
 				cout << "Please input a valid number" << endl;
-				index = getch();
+				index = getchar();
 				cin.clear();
 				cin.ignore();
 			}
 			else if (index != '1' && index != '2' && index != '0' && index != 'z')
 			{
 				cout << "Please input a valid number" << endl;
-				index = getch();
+				index = getchar();
 			}
 			else
 			{
@@ -553,7 +554,7 @@ void Game::Menu(bool &main)
 		cout << "M:  " << "Map" << endl;
 		cout << "E:  " << "Go Back" << endl;
 		cout << "Q:  " << "Quit" << endl;
-		point = getch();
+		point = getchar();
 		switch (point)
 		{
 		case('1'):
@@ -576,7 +577,7 @@ void Game::Menu(bool &main)
 			{
 				system("clear");
 				PrintMap();
-				if (getch() == 'm')
+				if (getchar() == 'm')
 				{
 					break;
 				}
@@ -876,7 +877,7 @@ void Game::Main(bool &main, bool &quit)
 		cout << "                    1: Start                      " << endl;
 		cout << "                    2: Reset                      " << endl;
 		cout << "                    3: Quit                       " << endl;
-		move = getch();
+		move = getchar();
 		// cerr << "char: " << move << endl;
 		if (move == '1')
 		{
@@ -887,7 +888,7 @@ void Game::Main(bool &main, bool &quit)
 				cout << "1: " << "Continue" << endl;
 				cout << "2: " << "New Game" << endl;
 				cout << "3: " << "Go Back " << endl;
-				choice = getch();
+				choice = getchar();
 				if (choice == '1')
 				{
 					Read();
@@ -947,7 +948,7 @@ void Game::Main(bool &main, bool &quit)
 		{	
 			cout << "Are you sure you wanna quit? (If you didn't save, you will lose your progress)" << endl;
 			cout << "Press \"1\" to confirm" << endl;
-			char choice = getch();
+			char choice = getchar();
 			if (choice == '1')
 			{
 				quit = true;
@@ -1061,7 +1062,7 @@ void Game::viewbox()
 				}
 			}
 			char move;
-			move = getch();
+			move = getchar();
 			if (move == 'e')
 			{
 				break;
@@ -1098,7 +1099,7 @@ void Game::viewbox()
 				}
 			}
 			char move;
-			move = getch();
+			move = getchar();
 			if (move == 'e')
 			{
 				break;
