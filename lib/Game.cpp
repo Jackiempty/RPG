@@ -38,7 +38,7 @@ void Game::Run()
 {
 	//	cout << CurrentMap << endl;
 	//	CurrentMap->PrintMap();
-	//	system("pause");
+	//	getchar(); // replacement for system("pause")  
 	// initscr();
 	system("stty -icanon");
 	main = true;
@@ -92,7 +92,7 @@ bool Game::Trigger()
 		PlayerList[1]->refresh_exp();
 		//		cout << "Here?" << endl;
 		CurrentMap->setMapSymbol(0, CurrentMap->getCurrentPositionY(), CurrentMap->getCurrentPositionX());
-		system("pause");
+		getchar(); // replacement for system("pause")  
 		return true;
 	}
 	else if (CurrentMap->getMapSymbol(CurrentMap->getCurrentPositionY(), CurrentMap->getCurrentPositionX()) == 4) // battle
@@ -107,7 +107,7 @@ bool Game::Trigger()
 		if (battle.Fight() == true)
 		{
 			cout << "6 credits aquired, CS left...." << endl;
-			system("pause");
+			getchar(); // replacement for system("pause")  
 			PlayerList[0]->setExp(PlayerList[0]->getExp() + monster1.exp + monster2.exp);
 			PlayerList[0]->setMoney(PlayerList[0]->getMoney() + monster1.money + monster2.money);
 			PlayerList[1]->setExp(PlayerList[1]->getExp() + monster1.exp + monster2.exp);
@@ -120,7 +120,7 @@ bool Game::Trigger()
 		{
 			cout << "You failed your exam..." << endl;
 			cout << "Try harder in CS final!" << endl;
-			system("pause");
+			getchar(); // replacement for system("pause")  
 			return false;
 		}
 
@@ -135,7 +135,7 @@ bool Game::Trigger()
 		if (battle.Fight() == true)
 		{
 			cout << "3 credits aquired, CS cleared!" << endl;
-			system("pause");
+			getchar(); // replacement for system("pause")  
 			PlayerList[0]->setExp(PlayerList[0]->getExp() + monster.exp);
 			PlayerList[0]->setMoney(PlayerList[0]->getMoney() + monster.money);
 			PlayerList[1]->setExp(PlayerList[1]->getExp() + monster.exp);
@@ -149,7 +149,7 @@ bool Game::Trigger()
 		{
 			cout << "You failed all your exam..." << endl;
 			cout << "You are such a piece of shit" << endl;
-			system("pause");
+			getchar(); // replacement for system("pause")  
 			return false;
 		}
 	}
@@ -320,7 +320,7 @@ void Game::openbox()
 		PlayerList[0]->putItem(axe);
 		PlayerList[0]->putItem(life);
 		PlayerList[0]->setMoney(1000);
-		system("pause");
+		getchar(); // replacement for system("pause")  
 	}
 	else if (CurrentMap->getMapName() == "map02.txt")
 	{
@@ -346,7 +346,7 @@ void Game::teleport()
 	{
 		CurrentMap = Maps[1];
 //		cout << "stage: " << stage << endl;
-//		system("pause");
+//		getchar(); // replacement for system("pause")  
 		if (stage == 1)
 		{
 			story();
@@ -362,7 +362,7 @@ void Game::teleport()
 		{
 			CurrentMap = Maps[2];
 //			cout << "stage: " << stage << endl;
-//			system("pause");
+//			getchar(); // replacement for system("pause")  
 			if (stage == 2)
 			{
 				story();
@@ -745,7 +745,7 @@ void Game::Read()
 		cout << "There is no saved file yet" << endl;
 		stage = 1;
 	//	cout << "New game starts..." << endl;
-		system("pause");
+		getchar(); // replacement for system("pause")  
 		return;
 	}
 	if (stoi(buff) == 0)

@@ -59,11 +59,11 @@ void Battle::Print()
 		{
 			if (nowhp > unit*i)
 			{
-				cout << "\u001b[31m��\u001b[0m";
+				cout << "\u001b[31m██\u001b[0m";
 			}
 			else
 			{
-				cout << "\u001b[37m��\u001b[0m";
+				cout << "\u001b[37m██\u001b[0m";
 			}
 		}
 		cout << "      ";
@@ -90,11 +90,11 @@ void Battle::Print()
 		{
 			if (nowmp > unit*i)
 			{
-				cout << "\u001b[34m��\u001b[0m";
+				cout << "\u001b[34m██\u001b[0m";
 			}
 			else
 			{
-				cout << "\u001b[37m��\u001b[0m";
+				cout << "\u001b[37m██\u001b[0m";
 			}
 		}
 		cout << "      ";
@@ -134,11 +134,11 @@ void Battle::Print()
 		{
 			if (nowhp > unit*i)
 			{
-				cout << "\u001b[31m��\u001b[0m";
+				cout << "\u001b[31m██\u001b[0m";
 			}
 			else
 			{
-				cout << "\u001b[37m��\u001b[0m";
+				cout << "\u001b[37m██\u001b[0m";
 			}
 		}
 		cout << "      ";
@@ -165,11 +165,11 @@ void Battle::Print()
 		{
 			if (nowmp > unit*i)
 			{
-				cout << "\u001b[34m��\u001b[0m";
+				cout << "\u001b[34m██\u001b[0m";
 			}
 			else
 			{
-				cout << "\u001b[37m��\u001b[0m";
+				cout << "\u001b[37m██\u001b[0m";
 			}
 		}
 		cout << "      ";
@@ -208,7 +208,7 @@ bool Battle::Fight()
 	{	
 		system("clear");
 		roundcount++;
-		cout << "Round " << roundcount << " ��" << endl;
+		cout << "Round " << roundcount << "  -" << endl;
 		sleep(2);
 		for (int i = 0; i < AttackOrder.size(); i++)
 		{
@@ -449,7 +449,7 @@ bool Battle::Fight()
 			if (plyrlive == 0)
 			{
 				cout << "Players' all defeated" << endl;
-				system("pause");
+				getchar(); // replacement for system("pause")  
 			//	system("clear");
 				cout << "Monsters' win" << endl;
 				sleep(2);
@@ -461,7 +461,7 @@ bool Battle::Fight()
 			if (monlive == 0)
 			{
 				cout << "Monsters' all defeated" << endl;
-				system("pause");
+				getchar(); // replacement for system("pause")  
 			//	system("clear");
 				cout << "Players' win" << endl;
 				sleep(2);

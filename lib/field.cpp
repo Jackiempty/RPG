@@ -192,64 +192,69 @@ void Field::display(void) const
 			if (current_position_y - (vision_height / 2) + i < 0 
 				|| current_position_y - (vision_height / 2) + i >= Height)
 			{
-				cout << "\u001b[30m��\u001b[0m";
+				cout << "\u001b[30m██\u001b[0m";
 			}
 			else
 			{
 				if (current_position_x - (vision_width / 2) + j < 0
 					|| current_position_x - (vision_width / 2) + j >= Width)
 				{
-					cout << "\u001b[30m��\u001b[0m";
+					cout << "\u001b[30m██\u001b[0m";
 				}
 				else
 				{
 					if (current_position_y - (vision_height / 2) + i == current_position_y
 						&& current_position_x - (vision_width / 2) + j == current_position_x) //me: green
 					{
-						cout << "\u001b[32m��\u001b[0m";
+						cout << "\u001b[32m██\u001b[0m";
 					}
 					else
 					{
 						if (map_data[current_position_y - (vision_height / 2) + i]
 							[current_position_x - (vision_width / 2) + j] == 1) //wall: white
 						{
-							cout << "\u001b[37m��\u001b[0m";
+							cout << "\u001b[37m██\u001b[0m";
 						}
 						if (map_data[current_position_y - (vision_height / 2) + i]
 							[current_position_x - (vision_width / 2) + j] == 0) //pavement: blue
 						{
-							cout << "\u001b[34m��\u001b[0m";
+							cout << "\u001b[34m██\u001b[0m";
 						}
 						if (map_data[current_position_y - (vision_height / 2) + i]
 							[current_position_x - (vision_width / 2) + j] == 2) //event: purple
 						{
-							cout << "\u001b[35m��\u001b[0m";
+							cout << "\u001b[35m██\u001b[0m";
 						}
 						if (map_data[current_position_y - (vision_height / 2) + i]
 							[current_position_x - (vision_width / 2) + j] == 5) //boss: red
 						{
-							cout << "\u001b[31m��\u001b[0m";
+							cout << "\u001b[31m██\u001b[0m";
 						}
 						if (map_data[current_position_y - (vision_height / 2) + i]
 							[current_position_x - (vision_width / 2) + j] == 9) //teleport: lblue
 						{
-							cout << "\u001b[36m��\u001b[0m";
+							cout << "\u001b[36m██\u001b[0m";
 						}
 						if (map_data[current_position_y - (vision_height / 2) + i]
 							[current_position_x - (vision_width / 2) + j] == 4) //battle: yellow
 						{
-							cout << "\u001b[33m��\u001b[0m";
+							cout << "\u001b[33m██\u001b[0m";
 						}
 						if (map_data[current_position_y - (vision_height / 2) + i]
 							[current_position_x - (vision_width / 2) + j] == 3) //box: lyellow
 						{
-							cout << "\u001b[33;1m��\u001b[0m";
+							cout << "\u001b[33;1m██\u001b[0m";
 						}
 						if (map_data[current_position_y - (vision_height / 2) + i]
 							[current_position_x - (vision_width / 2) + j] == 6) //shop: lred
 						{
-							cout << "\u001b[31;1m��\u001b[0m";
+							cout << "\u001b[31;1m██\u001b[0m";
 						}
+						if (map_data[current_position_y - (vision_height / 2) + i]
+							[current_position_x - (vision_width / 2) + j] == 7) //exit: lred
+						{
+							cout << "\u001b[31;1m██\u001b[0m";
+						}	
 					}
 				}
 			}
@@ -257,7 +262,7 @@ void Field::display(void) const
 		cout << endl;
 	}
 	cout << "----------------------------------------------------------------" << endl;
-	cout << "W:�� S:�� A:�� D:��" << endl;
+	cout << "W:⇧ S:⇩ A:⇦ D:⇨" << endl;
 //	cout << "Map Symbol: " << map_data[current_position_y][current_position_x] << endl;
 	return;
 }
@@ -270,36 +275,40 @@ void Field::PrintMap() const
 		{
 			if (map_data[i][j] == 1) //wall: white
 			{
-				cout << "\u001b[37m��\u001b[0m";
+				cout << "\u001b[37m██\u001b[0m";
 			}
 			if (map_data[i][j] == 0) //pavement: blue
 			{
-				cout << "\u001b[34m��\u001b[0m";
+				cout << "\u001b[34m██\u001b[0m";
 			}
 			if (map_data[i][j] == 2) //event: purple
 			{
-				cout << "\u001b[35m��\u001b[0m";
+				cout << "\u001b[35m██\u001b[0m";
 			}
 			if (map_data[i][j] == 4) //battle: yellow
 			{
-				cout << "\u001b[33m��\u001b[0m";
+				cout << "\u001b[33m██\u001b[0m";
 			}
 			if (map_data[i][j] == 9) //teleport: lblue
 			{
-				cout << "\u001b[36m��\u001b[0m";
+				cout << "\u001b[36m██\u001b[0m";
 			}
 			if (map_data[i][j] == 5) //boss: red
 			{
-				cout << "\u001b[31m��\u001b[0m";
+				cout << "\u001b[31m██\u001b[0m";
 			}
 			if (map_data[i][j] == 3) //box: lyellow
 			{
-				cout << "\u001b[33;1m��\u001b[0m";
+				cout << "\u001b[33;1m██\u001b[0m";
 			}
 			if (map_data[i][j] == 6) //shop: lred
 			{
-				cout << "\u001b[31;1m��\u001b[0m";
-			}		
+				cout << "\u001b[31;1m██\u001b[0m";
+			}	
+			if (map_data[i][j] == 7) //exit: lred
+			{
+				cout << "\u001b[31;1m██\u001b[0m";
+			}	
 		}
 		cout << endl;
 	}
@@ -350,7 +359,7 @@ bool Field::Trigger(NovicePlayer* plyr)
 		plyr->putItem(armor1);
 		plyr->putItem(potion1);
 		plyr->setLevel(100);
-		system("pause");
+		getchar(); // replacement for system("pause")  
 		return true;
 	}
 	else if (map_data[current_position_y][current_position_x] == 4) // battle

@@ -402,7 +402,7 @@ bool NovicePlayer::useConsumable(ConsumableItem* conitem)
 				Backpack[i] = nullptr;
 			}
 		}
-//		system("pause");
+//		getchar(); // replacement for system("pause")  
 //		countweight();
 		usleep(500000);
 		return true;
@@ -588,7 +588,7 @@ bool NovicePlayer::getmove(char move)
 		else if (Backpack[index]->type == 'c')
 		{
 //			cout << "Item pointer location: " << Backpack[index] << endl;
-//			system("pause");
+//			getchar(); // replacement for system("pause")  
 			tempitem = static_cast<ConsumableItem*>(Backpack[index]);			
 			if (useConsumable(tempitem))
 			{
