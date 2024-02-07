@@ -1,7 +1,9 @@
+# RPG
+Freshman CS homework, originally built on window's VS platform, trying to build one on Mac, and here's the file
 ## 12/9/2023
 in mac version, there's few problem
 
-fortunetly, I solved most of them
+fortunetly, I solved most of them  
 however, there's still one exists, which is the libary "curses"
 
 the iostream doesn't work properly with it's existence, and the whole table would be ruined by it 
@@ -18,7 +20,13 @@ individual exit block added
 
 officially announced repaired, maybe waited to be upgrade
 
-## build process
+# build process
+```shell
 $ mkdir build && cd build
 $ cmake ..
 $ make
+```
+
+The executable is located in ./build/bin  
+In ./file are the files for game saving data   
+Please remember to copy the the saving data to the dir of the executable
